@@ -1,0 +1,42 @@
+{
+  "game": {
+    "dialogue": {
+      "title": "對話生成器",
+      "generate": "生成對話",
+      "characterPlaceholder": "請輸入角色設定...",
+      "contextPlaceholder": "請輸入當前情境...",
+      "fillRequired": "請填寫必填項目",
+      "generating": "生成中...",
+      "result": "生成結果"
+    },
+    "emotion": {
+      "neutral": "中立",
+      "happy": "開心",
+      "angry": "憤怒",
+      "sad": "悲傷",
+      "determined": "堅定",
+      "fear": "恐懼",
+      "surprise": "驚訝"
+    },
+    "scene": {
+      "generate": "生成場景描述",
+      "enhance": "增強場景",
+      "title": "場景編輯器"
+    },
+    "branch": {
+      "title": "劇情分支",
+      "predict": "預測分支",
+      "count": "分支數量"
+    },
+    "llm": {
+      "selectModel": "選擇模型",
+      "apiKeyMissing": "API Key 未設定",
+      "requestFailed": "請求失敗",
+      "streaming": "流式輸出中...",
+      "parseError": "回覆解析失敗",
+      "timeout": "回覆逾時",
+      "fallbackMessage": "已改用備援回覆，請繼續",
+      "retryExhausted": "多次重試仍失敗，已改用備援回覆"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@moyin/shared": ["../../packages/shared/src"],
+      "@moyin/shared/*": ["../../packages/shared/src/*"],
+      "@moyin/vn-engine": ["../../packages/vn-engine/src"],
+      "@moyin/vn-engine/*": ["../../packages/vn-engine/src/*"],
+      "@moyin/llm-sdk": ["../../packages/llm-sdk/src"],
+      "@moyin/llm-sdk/*": ["../../packages/llm-sdk/src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", "src/__tests__/**/*.ts", "vite-env.d.ts"],
+  "references": [
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/vn-engine" },
+    { "path": "../../packages/llm-sdk" }
+  ]
+}

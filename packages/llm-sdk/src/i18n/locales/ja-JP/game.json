@@ -1,0 +1,42 @@
+{
+  "game": {
+    "dialogue": {
+      "title": "対話ジェネレーター",
+      "generate": "対話を生成",
+      "characterPlaceholder": "キャラクタープロフィールを入力...",
+      "contextPlaceholder": "現在の状況を入力...",
+      "fillRequired": "必須項目を入力してください",
+      "generating": "生成中...",
+      "result": "結果"
+    },
+    "emotion": {
+      "neutral": "中立",
+      "happy": "幸せ",
+      "angry": "怒り",
+      "sad": "悲しみ",
+      "determined": "決意",
+      "fear": "恐怖",
+      "surprise": "驚き"
+    },
+    "scene": {
+      "generate": "シーン説明を生成",
+      "enhance": "シーンを強化",
+      "title": "シーンエディター"
+    },
+    "branch": {
+      "title": "ストーリー分岐",
+      "predict": "分岐を予測",
+      "count": "分岐数"
+    },
+    "llm": {
+      "selectModel": "モデルを選択",
+      "apiKeyMissing": "APIキーが設定されていません",
+      "requestFailed": "リクエスト失敗",
+      "streaming": "ストリーミング中...",
+      "parseError": "応答の解析に失敗しました",
+      "timeout": "応答がタイムアウトしました",
+      "fallbackMessage": "代替応答に切り替えました。続けてください。",
+      "retryExhausted": "再試行に失敗したため代替応答に切り替えました。"
+    }
+  }
+}

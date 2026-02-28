@@ -1,0 +1,42 @@
+{
+  "game": {
+    "dialogue": {
+      "title": "Dialogue Generator",
+      "generate": "Generate Dialogue",
+      "characterPlaceholder": "Enter character profile...",
+      "contextPlaceholder": "Enter current context...",
+      "fillRequired": "Please fill in required fields",
+      "generating": "Generating...",
+      "result": "Result"
+    },
+    "emotion": {
+      "neutral": "Neutral",
+      "happy": "Happy",
+      "angry": "Angry",
+      "sad": "Sad",
+      "determined": "Determined",
+      "fear": "Fear",
+      "surprise": "Surprise"
+    },
+    "scene": {
+      "generate": "Generate Scene Description",
+      "enhance": "Enhance Scene",
+      "title": "Scene Editor"
+    },
+    "branch": {
+      "title": "Story Branch",
+      "predict": "Predict Branch",
+      "count": "Branch Count"
+    },
+    "llm": {
+      "selectModel": "Select Model",
+      "apiKeyMissing": "API Key not set",
+      "requestFailed": "Request failed",
+      "streaming": "Streaming...",
+      "parseError": "Failed to parse response",
+      "timeout": "Response timed out",
+      "fallbackMessage": "Fallback response applied. Please continue.",
+      "retryExhausted": "Retry attempts exhausted. Fallback response applied."
+    }
+  }
+}

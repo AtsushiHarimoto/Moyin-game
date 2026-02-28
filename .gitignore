@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Turbo
+.turbo/
+
+# Vite
+.vite/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Test
+coverage/
+test-results/
+playwright-report/
+
+# Lock file (regenerate with pnpm install)
+pnpm-lock.yaml
+
+# Lint
+lint-report.json
+
+# Logs
+*.log

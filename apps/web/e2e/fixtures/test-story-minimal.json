@@ -1,0 +1,67 @@
+{
+  "manifest": {
+    "storyKey": "e2e_test_story",
+    "packVersion": "1.0.0",
+    "schemaVersion": 1,
+    "protocolVersionPin": "1",
+    "title": "E2E Test Story",
+    "description": "Minimal story for game loop E2E testing"
+  },
+  "lore": {
+    "premise": "A simple test scenario",
+    "worldSetting": "A quiet room",
+    "tone": "casual",
+    "opening": {
+      "introSceneId": "sc_test_01"
+    }
+  },
+  "game": {
+    "player": {
+      "playerId": "player",
+      "displayName": "Player"
+    }
+  },
+  "characters": [
+    {
+      "charId": "c_npc",
+      "displayName": "Test NPC",
+      "personality": "Friendly and helpful",
+      "speechStyle": "Casual and warm",
+      "assets": {
+        "portraits": {}
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "sceneId": "sc_test_01",
+      "chapterId": "ch_01",
+      "title": "Welcome Scene",
+      "description": "A simple test scene for E2E verification",
+      "activeCast": ["c_npc"]
+    },
+    {
+      "sceneId": "sc_ending_happy",
+      "chapterId": "ch_01",
+      "title": "Happy Ending",
+      "activeCast": ["c_npc"]
+    }
+  ],
+  "chapters": [
+    {
+      "chapterId": "ch_01",
+      "title": "Chapter 1",
+      "sceneIds": ["sc_test_01", "sc_ending_happy"],
+      "entrySceneId": "sc_test_01"
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "happy_end",
+      "type": "good",
+      "title": "Happy End",
+      "subtitle": "You found happiness!",
+      "terminalSceneId": "sc_ending_happy"
+    }
+  ]
+}

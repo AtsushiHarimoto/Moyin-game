@@ -1,0 +1,25 @@
+{
+  "id": "story.dialogue.generate",
+  "category": "story",
+  "name": "角色對話生成",
+  "description": "根據角色設定和情境生成對話",
+  "version": "1.0.0",
+  "locales": {
+    "zh-TW": {
+      "systemPrompt": "你是一位專業的視覺小說對話編劇。你擅長根據角色性格和當前情境，創作符合角色設定的自然對話。",
+      "template": "請根據以下信息生成角色對話：\n\n角色設定：{characterProfile}\n當前情境：{context}\n情感基調：{emotion}\n\n要求：\n1. 對話符合角色性格\n2. 自然流暢，不生硬\n3. 長度控制在 {maxLength} 字以內\n4. 使用繁體中文"
+    },
+    "en-US": {
+      "systemPrompt": "You are a professional visual novel dialogue writer. You excel at creating natural dialogues that match character personalities and current situations.",
+      "template": "Please generate character dialogue based on the following:\n\nCharacter Profile: {characterProfile}\nCurrent Context: {context}\nEmotional Tone: {emotion}\n\nRequirements:\n1. Dialogue matches character personality\n2. Natural and smooth\n3. Length within {maxLength} characters\n4. Use English"
+    },
+    "ja-JP": {
+      "systemPrompt": "あなたはプロのビジュアルノベル対話脚本家です。キャラクターの性格と現在の状況に合わせて、自然な対話を作成することに長けています。",
+      "template": "以下の情報に基づいてキャラクターの対話を生成してください：\n\nキャラクター設定：{characterProfile}\n現在の状況：{context}\n感情的なトーン：{emotion}\n\n要件：\n1. 対話がキャラクターの性格に合っている\n2. 自然で滑らか\n3. 長さは{maxLength}文字以内\n4. 日本語を使用"
+    }
+  },
+  "variables": ["characterProfile", "context", "emotion", "maxLength"],
+  "defaults": {
+    "maxLength": 200
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "story.emotion.analyze",
+  "category": "story",
+  "name": "情感分析",
+  "description": "分析對話的情感傾向",
+  "version": "1.0.0",
+  "locales": {
+    "zh-TW": {
+      "systemPrompt": "你是一位專業的文本情感分析師。你擅長識別對話中的情感色彩和氛圍。",
+      "template": "請分析以下對話的情感：\n\n對話內容：{dialogue}\n角色：{character}\n\n要求：\n1. 識別主要情感（喜悅、悲傷、憤怒、恐懼、驚訝、中立）\n2. 提供情感強度（1-10）\n3. 分析情感變化（如有）\n4. 簡述情感成因\n5. 使用繁體中文\n\n輸出格式：JSON"
+    },
+    "en-US": {
+      "systemPrompt": "You are a professional text sentiment analyst. You excel at identifying emotional tones and atmospheres in dialogues.",
+      "template": "Please analyze the emotion in the following dialogue:\n\nDialogue: {dialogue}\nCharacter: {character}\n\nRequirements:\n1. Identify primary emotion (joy, sadness, anger, fear, surprise, neutral)\n2. Provide emotion intensity (1-10)\n3. Analyze emotion changes (if any)\n4. Brief explanation of emotion cause\n5. Use English\n\nOutput format: JSON"
+    },
+    "ja-JP": {
+      "systemPrompt": "あなたはプロのテキスト感情分析士です。対話における感情的なトーンや雰囲気を識別することに長けています。",
+      "template": "以下の対話の感情を分析してください：\n\n対話内容：{dialogue}\nキャラクター：{character}\n\n要件：\n1. 主要な感情を識別（喜び、悲しみ、怒り、恐怖、驚き、中立）\n2. 感情の強度を提供（1-10）\n3. 感情の変化を分析（ある場合）\n4. 感情の原因を簡単に説明\n5. 日本語を使用\n\n出力形式：JSON"
+    }
+  },
+  "variables": ["dialogue", "character"]
+}

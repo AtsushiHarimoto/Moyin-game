@@ -1,0 +1,662 @@
+@import "tailwindcss";
+
+/* ============================================
+   Theme CSS Variables (migrated from v1 theme.css)
+   ============================================ */
+
+:root {
+  /* --- Cursor SVG --- */
+  --cursor-svg-light: url('/cursors/heart-pink.svg');
+
+  /* --- Basic Backgrounds & Containers --- */
+  --ui-bg: #fdeff4;
+  --ui-panel: #ffffff;
+  --ui-panel-subtle: #fff7fb;
+
+  /* --- Glassmorphism --- */
+  --ui-panel-glass: rgba(255, 255, 255, 0.2);
+  --ui-panel-glass-border: rgba(255, 255, 255, 0.4);
+  --ui-overlay: rgba(15, 5, 12, 0.5);
+
+  /* --- Text --- */
+  --ui-text: #3d1a24;
+  --ui-muted: #6e4854;
+  --ui-placeholder: #8d6a78;
+  --ui-inverse: #ffffff;
+
+  /* --- Borders & Scrollbar --- */
+  --ui-border: #f4cfe1;
+  --ui-scroll-thumb: #f9a8d4;
+
+  /* --- Primary Colors --- */
+  --ui-primary: #f472b6;
+  --ui-primary-hover: #fb7185;
+  --ui-primary-active: #e11d48;
+  --ui-primary-soft: #fefefe;
+  --ui-gradient-primary: linear-gradient(135deg, #f472b6 0%, #fb7185 100%);
+
+  /* --- Status Colors --- */
+  --ui-success: #ec4899;
+  --ui-warning: #fb7185;
+  --ui-danger: #be123c;
+
+  /* --- Imperial Gold (VN Stage) --- */
+  --ui-imperial-gold: #D4AF37;
+  --ui-imperial-gold-soft: rgba(212, 175, 55, 0.3);
+  --ui-imperial-gold-glow: 0 0 15px rgba(212, 175, 55, 0.3);
+  --ui-vn-stage-bg: linear-gradient(135deg, #111827, #1f2937);
+  --ui-vn-stage-text: #ffffff;
+
+  /* --- Page Background Gradient --- */
+  --ui-page-bg-stop-1: #ffdee9;
+  --ui-page-bg-stop-2: #fbdaff;
+  --ui-page-bg-stop-3: #e3e1ff;
+  --ui-gradient-page-bg: linear-gradient(
+    135deg,
+    var(--ui-page-bg-stop-1) 0%,
+    var(--ui-page-bg-stop-2) 50%,
+    var(--ui-page-bg-stop-3) 100%
+  );
+
+  /* --- Dialog & Choices --- */
+  --ui-dialog-bg: #ffffff;
+  --ui-choice-hover: #fff1f5;
+  --ui-choice-active: #fbcfe8;
+  --ui-button-muted: #f5f5f5;
+
+  /* --- Chat Bubbles --- */
+  --ui-bubble-user-bg: linear-gradient(135deg, rgba(255, 154, 158, 0.8) 0%, rgba(254, 207, 239, 0.8) 100%);
+  --ui-bubble-assistant-bg: rgba(45, 30, 35, 0.65);
+  --ui-bubble-read: rgba(40, 30, 35, 0.4);
+  --ui-bubble-text: #ffffff;
+
+  /* --- Shadows --- */
+  --ui-shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --ui-shadow-strong: 0 12px 32px rgba(0, 0, 0, 0.16);
+
+  /* --- Border Radius --- */
+  --ui-radius-lg: 16px;
+  --ui-radius-md: 12px;
+  --ui-radius-sm: 8px;
+  --ui-radius-pill: 999px;
+
+  /* --- Spacing --- */
+  --ui-gap-sm: 6px;
+  --ui-gap-md: 12px;
+  --ui-gap-lg: 20px;
+  --ui-gap-xl: 56px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+  --space-12: 80px;
+
+  /* --- Container --- */
+  --ui-container-width: 1500px;
+
+  /* --- Controls --- */
+  --ui-control-sm: 32px;
+  --ui-control-md: 40px;
+  --ui-control-lg: 48px;
+
+  /* --- Animations --- */
+  --ui-duration-fast: 120ms;
+  --ui-duration: 200ms;
+  --ui-duration-slow: 320ms;
+  --ui-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Focus --- */
+  --ui-focus-color: rgba(244, 114, 182, 0.45);
+  --ui-focus-shadow: 0 0 0 3px var(--ui-focus-color);
+
+  /* --- Toast --- */
+  --ui-toast-bg: #f9a8d4;
+  --ui-toast-text: #ffffff;
+  --ui-toast-success: #f472b6;
+  --ui-toast-warning: #fb7185;
+  --ui-toast-error: #be123c;
+
+  /* --- Hotkey HUD --- */
+  --ui-hotkey-bg: #f8e7ef;
+  --ui-hotkey-text: #a62a48;
+  --ui-hud-fill: #f472b6;
+  --ui-hud-track: #fbe7f1;
+  --ui-toggle-track: #e9e9ea;
+
+  /* --- Z-Index Layers --- */
+  --z-background: -1;
+  --z-particles: 0;
+  --z-page: 10;
+  --z-hud: 100;
+  --z-dock: 200;
+  --z-drawer: 500;
+  --z-modal: 1000;
+  --z-toast: 2000;
+  --z-splash: 5000;
+  --z-max: 99999;
+
+  /* --- Navigation --- */
+  --ui-nav-bg: rgba(255, 255, 255, 0.7);
+  --ui-nav-border: rgba(255, 255, 255, 0.4);
+  --ui-nav-blur: blur(15px);
+  --ui-nav-selected-bg: linear-gradient(135deg, #f36395 0%, #f2b4ca 100%);
+  --ui-nav-text: #f472b6;
+  --ui-nav-shadow: 0 4px 15px rgba(244, 114, 182, 0.4);
+
+  /* --- Typography --- */
+  --ui-font-main: "M PLUS Rounded 1c", "Varela Round", sans-serif;
+  --ui-font-special: "JF Open Huninn", "M PLUS Rounded 1c", sans-serif;
+  --ui-font-mono: "JetBrains Mono", "Fira Code", "Monaco", "Courier New", monospace;
+
+  /* --- Font Sizes --- */
+  --ui-font-xs: 0.75rem;
+  --ui-font-sm: 0.875rem;
+  --ui-font-base: 1rem;
+  --ui-font-lg: 1.125rem;
+  --ui-font-xl: 1.25rem;
+  --ui-font-2xl: 1.5rem;
+  --ui-font-3xl: 2rem;
+  --ui-font-display: 3rem;
+  --ui-font-hero: clamp(2rem, 8vh, 5rem);
+
+  /* --- Font Weight --- */
+  --ui-weight-light: 300;
+  --ui-weight-normal: 400;
+  --ui-weight-medium: 500;
+  --ui-weight-semibold: 600;
+  --ui-weight-bold: 700;
+  --ui-weight-heavy: 800;
+  --ui-weight-black: 900;
+
+  /* --- V1 Compatibility Tokens (Design Tokens + Legacy UI Vars) --- */
+  --ui-background: var(--ui-bg);
+  --ui-secondary: var(--ui-primary-hover);
+  --ui-vn-overlay-bg: rgba(0, 0, 0, 0.6);
+  --ui-nav-font: var(--ui-font-special);
+  --ui-primary-fg: var(--ui-inverse);
+  --ui-royal-purple: #7f0df2;
+  --ui-tech-neon: #00ffea;
+  --ui-story-card-height: 300px;
+  --game-loading-size: 120px;
+  --heart-color: var(--ui-primary);
+  --ui-font-10: 10px;
+
+  --color-primary: var(--ui-primary);
+  --color-primary-light: var(--ui-primary-hover);
+  --color-secondary: var(--ui-muted);
+  --color-secondary-light: color-mix(in srgb, var(--ui-muted) 65%, var(--ui-inverse));
+  --color-accent: var(--ui-warning);
+  --color-accent-light: color-mix(in srgb, var(--ui-warning) 70%, var(--ui-inverse));
+  --color-error: var(--ui-danger);
+  --color-warning: var(--ui-warning);
+  --color-text-primary: var(--ui-text);
+  --color-text-secondary: var(--ui-muted);
+
+  --font-primary: var(--ui-font-main);
+  --font-size-xs: var(--ui-font-xs);
+  --font-size-sm: var(--ui-font-sm);
+  --font-size-lg: var(--ui-font-lg);
+  --radius-md: var(--ui-radius-md);
+  --shadow-md: var(--ui-shadow-soft);
+  --shadow-inset: inset 0 2px 4px color-mix(in srgb, var(--ui-text) 10%, transparent);
+
+  /* --- Header Heights (V1: desktop=80px, mobile=64px) --- */
+  --header-height-mobile: 64px;
+  --header-height-tablet: 80px;
+  --header-height-desktop: 80px;
+  --header-height: var(--header-height-mobile);
+
+  /* --- Workshop Mode --- */
+  --workshop-editor-bg: var(--ui-panel);
+  --workshop-editor-border: var(--ui-border);
+  --workshop-editor-text: var(--ui-text);
+  --workshop-sidebar-width: clamp(200px, 25vw, 400px);
+}
+
+/* ============================================
+   Theme: Sakura (explicit)
+   ============================================ */
+[data-theme="sakura"] {
+  --ui-bg: #fdeff4;
+  --ui-panel: #ffffff;
+  --ui-panel-subtle: #fff7fb;
+  --ui-panel-glass: rgba(255, 255, 255, 0.4);
+  --ui-panel-glass-border: rgba(255, 255, 255, 0.5);
+  --ui-text: #3d1a24;
+  --ui-muted: #6e4854;
+  --ui-border: #f4cfe1;
+  --ui-page-bg-stop-1: #ffdee9;
+  --ui-page-bg-stop-2: #fbdaff;
+  --ui-page-bg-stop-3: #e3e1ff;
+  --ui-choice-hover: #fff1f5;
+  --ui-choice-active: #fbcfe8;
+  --ui-nav-bg: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   Theme: Neon Violet (Dark)
+   ============================================ */
+[data-theme="dark"] {
+  --cursor-svg-light: url('/cursors/heart-purple.svg');
+  --ui-bg: #0f051a;
+  --ui-panel: rgba(20, 10, 35, 0.85);
+  --ui-panel-subtle: rgba(26, 11, 46, 0.45);
+  --ui-panel-glass: rgba(30, 15, 50, 0.6);
+  --ui-panel-glass-border: rgba(168, 85, 247, 0.4);
+  --ui-overlay: rgba(5, 2, 10, 0.85);
+  --ui-text: #f3f0ff;
+  --ui-muted: #a78bfa;
+  --ui-placeholder: #6d5091;
+  --ui-inverse: #0f051a;
+  --ui-border: #3b2166;
+  --ui-scroll-thumb: #8b5cf6;
+  --ui-primary: #a855f7;
+  --ui-primary-hover: #c084fc;
+  --ui-primary-active: #9333ea;
+  --ui-primary-soft: rgba(139, 92, 246, 0.15);
+  --ui-gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+  --ui-page-bg-stop-1: #1a0b2e;
+  --ui-page-bg-stop-2: #0f051a;
+  --ui-page-bg-stop-3: #050b1a;
+  --ui-dialog-bg: #140a23;
+  --ui-choice-hover: rgba(168, 85, 247, 0.2);
+  --ui-choice-active: rgba(168, 85, 247, 0.4);
+  --ui-button-muted: #1e1133;
+  --ui-bubble-user-bg: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+  --ui-bubble-assistant-bg: rgba(35, 20, 50, 0.85);
+  --ui-bubble-read: rgba(168, 85, 247, 0.15);
+  --ui-bubble-text: #f3f0ff;
+  --ui-nav-bg: rgba(15, 5, 26, 0.85);
+  --ui-nav-border: rgba(168, 85, 247, 0.6);
+  --ui-nav-selected-bg: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+  --ui-nav-text: #ede9fe;
+  --ui-nav-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 25px rgba(168, 85, 247, 0.6);
+  --ui-success: #a855f7;
+  --ui-warning: #f472b6;
+  --ui-danger: #f43f5e;
+  --ui-hotkey-bg: #2d164d;
+  --ui-hotkey-text: #d8b4fe;
+  --ui-hud-track: #1a0b2e;
+}
+
+/* ============================================
+   Theme: Tokyo Night
+   ============================================ */
+[data-theme="tokyo-night"] {
+  --ui-bg: #1a1b26;
+  --ui-panel: #24283b;
+  --ui-panel-subtle: #1f2335;
+  --ui-panel-glass: rgba(36, 40, 59, 0.7);
+  --ui-panel-glass-border: rgba(122, 162, 247, 0.3);
+  --ui-overlay: rgba(16, 17, 26, 0.8);
+  --ui-text: #a9b1d6;
+  --ui-muted: #565f89;
+  --ui-placeholder: #565f89;
+  --ui-inverse: #1a1b26;
+  --ui-border: #414868;
+  --ui-scroll-thumb: #7aa2f7;
+  --ui-primary: #7aa2f7;
+  --ui-primary-hover: #bb9af7;
+  --ui-primary-active: #7dcfff;
+  --ui-primary-soft: rgba(122, 162, 247, 0.15);
+  --ui-gradient-primary: linear-gradient(135deg, #7aa2f7 0%, #bb9af7 100%);
+  --ui-page-bg-stop-1: #1a1b26;
+  --ui-page-bg-stop-2: #24283b;
+  --ui-page-bg-stop-3: #16161e;
+  --ui-dialog-bg: #24283b;
+  --ui-choice-hover: rgba(122, 162, 247, 0.1);
+  --ui-choice-active: rgba(122, 162, 247, 0.3);
+  --ui-button-muted: #414868;
+  --ui-bubble-user-bg: linear-gradient(135deg, #7aa2f7 0%, #bb9af7 100%);
+  --ui-bubble-assistant-bg: #1f2335;
+  --ui-nav-bg: rgba(26, 27, 38, 0.9);
+  --ui-nav-selected-bg: linear-gradient(135deg, #7aa2f7 0%, #bb9af7 100%);
+  --ui-nav-text: #c0caf5;
+  --ui-success: #9ece6a;
+  --ui-warning: #e0af68;
+  --ui-danger: #f7768e;
+  --ui-hotkey-bg: #414868;
+  --ui-hotkey-text: #7aa2f7;
+}
+
+/* ============================================
+   Theme: Hack Mode
+   ============================================ */
+[data-theme="hack"] {
+  --ui-bg: #0d1117;
+  --ui-panel: #161b22;
+  --ui-panel-subtle: #0d1117;
+  --ui-panel-glass: rgba(22, 27, 34, 0.9);
+  --ui-panel-glass-border: rgba(57, 211, 83, 0.5);
+  --ui-overlay: rgba(0, 0, 0, 0.9);
+  --ui-text: #00ff41;
+  --ui-muted: #008f11;
+  --ui-placeholder: #003b00;
+  --ui-inverse: #000000;
+  --ui-border: #30363d;
+  --ui-scroll-thumb: #00ff41;
+  --ui-primary: #00ff41;
+  --ui-primary-hover: #0aff0a;
+  --ui-primary-active: #00cc33;
+  --ui-primary-soft: rgba(0, 255, 65, 0.1);
+  --ui-gradient-primary: linear-gradient(180deg, #0d1117 0%, #00ff41 100%);
+  --ui-page-bg-stop-1: #000000;
+  --ui-page-bg-stop-2: #0d1117;
+  --ui-page-bg-stop-3: #161b22;
+  --ui-dialog-bg: #161b22;
+  --ui-choice-hover: rgba(0, 255, 65, 0.2);
+  --ui-choice-active: rgba(0, 255, 65, 0.4);
+  --ui-button-muted: #21262d;
+  --ui-bubble-user-bg: #238636;
+  --ui-bubble-assistant-bg: #161b22;
+  --ui-bubble-text: #c9d1d9;
+  --ui-nav-bg: #0d1117;
+  --ui-nav-border: #00ff41;
+  --ui-nav-selected-bg: #00ff41;
+  --ui-nav-text: #000000;
+  --ui-nav-shadow: 0 0 10px #00ff41;
+  --ui-success: #00ff41;
+  --ui-warning: #d2a8ff;
+  --ui-danger: #ff7b72;
+  --ui-font-main: "JetBrains Mono", monospace;
+  --ui-font-special: "JetBrains Mono", monospace;
+}
+
+/* ============================================
+   Theme: Eye Care
+   ============================================ */
+[data-theme="eye-care"] {
+  --ui-bg: #f5f1e6;
+  --ui-panel: #fbf7ef;
+  --ui-panel-subtle: #f0ebe0;
+  --ui-panel-glass: rgba(251, 247, 239, 0.8);
+  --ui-panel-glass-border: rgba(140, 123, 117, 0.2);
+  --ui-overlay: rgba(60, 50, 40, 0.3);
+  --ui-text: #5d4037;
+  --ui-muted: #8d6e63;
+  --ui-placeholder: #bcaaa4;
+  --ui-inverse: #ffffff;
+  --ui-border: #d7ccc8;
+  --ui-scroll-thumb: #a1887f;
+  --ui-primary: #795548;
+  --ui-primary-hover: #8d6e63;
+  --ui-primary-active: #5d4037;
+  --ui-primary-soft: rgba(121, 85, 72, 0.1);
+  --ui-gradient-primary: linear-gradient(135deg, #8d6e63 0%, #795548 100%);
+  --ui-page-bg-stop-1: #f5f1e6;
+  --ui-page-bg-stop-2: #efebe0;
+  --ui-page-bg-stop-3: #e6e2d6;
+  --ui-dialog-bg: #fbf7ef;
+  --ui-choice-hover: rgba(121, 85, 72, 0.08);
+  --ui-choice-active: rgba(121, 85, 72, 0.15);
+  --ui-button-muted: #efebe0;
+  --ui-bubble-user-bg: linear-gradient(135deg, #a1887f 0%, #8d6e63 100%);
+  --ui-bubble-assistant-bg: #efebe0;
+  --ui-nav-bg: rgba(245, 241, 230, 0.9);
+  --ui-nav-selected-bg: #8d6e63;
+  --ui-nav-text: #ffffff;
+  --ui-success: #558b2f;
+  --ui-warning: #f9a825;
+  --ui-danger: #c62828;
+  --ui-hotkey-bg: #d7ccc8;
+  --ui-hotkey-text: #5d4037;
+}
+
+/* ============================================
+   Global Styles (migrated from v1 global.css)
+   ============================================ */
+
+/* Selective transition: exclude SVG, Canvas, and elements with no-transition class */
+body, [data-theme] *:not(svg):not(svg *):not(canvas):not(.no-transition) {
+  transition: background-color 200ms var(--ui-ease),
+              color 200ms var(--ui-ease),
+              border-color 200ms var(--ui-ease);
+}
+
+[data-theme] {
+  transition: background-color 200ms var(--ui-ease),
+              color 200ms var(--ui-ease),
+              border-color 200ms var(--ui-ease),
+              box-shadow 200ms var(--ui-ease);
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--ui-font-main);
+  line-height: 1.5;
+  background: var(--ui-bg);
+  color: var(--ui-text);
+  position: relative;
+  cursor: var(--cursor-svg-light) 16 16, auto;
+}
+
+button, a, .cursor-pointer {
+  cursor: var(--cursor-svg-light) 16 16, pointer;
+}
+
+body.no-custom-cursor,
+body.no-custom-cursor button,
+body.no-custom-cursor a,
+body.no-custom-cursor .cursor-pointer {
+  cursor: auto !important;
+}
+
+#root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  position: relative;
+}
+
+/* Standard page background */
+.page-bg-standard {
+  background: var(--ui-gradient-page-bg) !important;
+}
+
+/* Glass panel utilities */
+.glass-panel {
+  background: var(--ui-panel-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--ui-panel-glass-border);
+  box-shadow: var(--ui-shadow-soft);
+}
+
+.glass-card {
+  background: var(--ui-panel-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--ui-panel-glass-border);
+  border-radius: var(--ui-radius-lg);
+  box-shadow: var(--ui-shadow-soft);
+  transition: all var(--ui-duration) var(--ui-ease);
+}
+
+.glass-card:hover {
+  border-color: var(--ui-primary);
+  transform: translateY(-2px);
+}
+
+/* Neon glow effect */
+.neon-glow {
+  box-shadow: 0 0 10px color-mix(in srgb, var(--ui-primary) 50%, transparent),
+              0 0 20px color-mix(in srgb, var(--ui-primary) 30%, transparent);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Slider input (range) styling */
+.slider-input {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ui-inverse);
+  border: 2px solid var(--ui-primary);
+  box-shadow: var(--ui-shadow-soft);
+  transition: transform var(--ui-duration) var(--ui-ease);
+  cursor: pointer;
+}
+
+.slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.slider-input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ui-inverse);
+  border: 2px solid var(--ui-primary);
+  box-shadow: var(--ui-shadow-soft);
+  cursor: pointer;
+}
+
+.slider-input:focus-visible::-webkit-slider-thumb {
+  outline: none;
+  box-shadow: var(--ui-shadow-soft), var(--ui-focus-shadow);
+}
+
+/* ── Title Screen Animations ─────────────────────────────────── */
+
+@keyframes tracking-in-expand {
+  0% { letter-spacing: -0.5em; opacity: 0; }
+  40% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+@keyframes scale-up-hor-center {
+  0% { transform: scaleX(0.4); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes text-focus-in {
+  0% { filter: blur(12px); opacity: 0; }
+  100% { filter: blur(0px); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glow-pulse-anim {
+  0%, 100% {
+    box-shadow: 0 0 15px color-mix(in srgb, var(--glow-color) 40%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 30px color-mix(in srgb, var(--glow-color) 60%, transparent);
+  }
+}
+
+@keyframes blink {
+  0%, 49%, 100% { opacity: 1; }
+  50%, 99% { opacity: 0; }
+}
+
+.tracking-in-expand { animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both; }
+.scale-up-hor-center { animation: scale-up-hor-center 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 1s both; }
+.text-focus-in { animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.2s both; }
+.fade-in-up { animation: fade-in-up 1s ease-out 2s both; }
+.fade-in { animation: fade-in 2s ease-out 2.5s both; }
+.logo-float { animation: logo-float 4s ease-in-out infinite; }
+.pulse-glow-loop {
+  --glow-color: var(--ui-primary);
+  animation: glow-pulse-anim 3s infinite;
+}
+.glow-pulse {
+  --glow-color: var(--ui-imperial-gold);
+  animation: glow-pulse-anim 3s ease-in-out infinite;
+}
+.blink { animation: blink 1.5s step-end infinite; }
+
+/* ── Character Breathing Animations (VN Stage) ──────────────── */
+
+@keyframes breath-a {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.015); }
+}
+
+@keyframes breath-b {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.01); }
+}
+
+.animate-breath-a {
+  animation: breath-a 4.2s ease-in-out infinite;
+}
+
+.animate-breath-b {
+  animation: breath-b 4.8s ease-in-out infinite;
+}
+
+
+/* Responsive header height */
+@media (min-width: 768px) {
+  :root { --header-height: var(--header-height-tablet); }
+}
+@media (min-width: 1024px) {
+  :root { --header-height: var(--header-height-desktop); }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel,
+  .glass-card,
+  .animate-breath-a,
+  .animate-breath-b,
+  .tracking-in-expand,
+  .scale-up-hor-center,
+  .text-focus-in,
+  .fade-in-up,
+  .fade-in,
+  .logo-float,
+  .pulse-glow-loop,
+  .glow-pulse,
+  .blink {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .pulse-glow-loop,
+  .glow-pulse {
+    animation: none !important;
+  }
+}

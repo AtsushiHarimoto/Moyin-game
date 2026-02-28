@@ -1,0 +1,217 @@
+{
+  "$defs": {
+    "GameFrame": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "speaker": {
+          "title": "Speaker",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "canNext": {
+          "default": true,
+          "title": "Cannext",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "speaker",
+        "text"
+      ],
+      "title": "GameFrame",
+      "type": "object"
+    },
+    "GameMeta": {
+      "properties": {
+        "conversation_id": {
+          "title": "Conversation Id",
+          "type": "string"
+        },
+        "response_id": {
+          "title": "Response Id",
+          "type": "string"
+        },
+        "candidate_id": {
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "protocolVersion": {
+          "default": "v1",
+          "title": "Protocolversion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "conversation_id",
+        "response_id",
+        "candidate_id"
+      ],
+      "title": "GameMeta",
+      "type": "object"
+    },
+    "GameProposal": {
+      "properties": {
+        "relationshipDelta": {
+          "anyOf": [
+            {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relationshipdelta"
+        },
+        "flagSet": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flagset"
+        },
+        "eventSignal": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Eventsignal"
+        },
+        "eventSignals": {
+          "anyOf": [
+            {
+              "items": {},
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Eventsignals"
+        }
+      },
+      "title": "GameProposal",
+      "type": "object"
+    },
+    "GameStageHints": {
+      "properties": {
+        "bgKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bgkey"
+        },
+        "bgmKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bgmkey"
+        },
+        "portraits": {
+          "anyOf": [
+            {
+              "items": {},
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Portraits"
+        }
+      },
+      "title": "GameStageHints",
+      "type": "object"
+    }
+  },
+  "description": "遊戲回合響應 (嚴格 JSON)",
+  "properties": {
+    "meta": {
+      "$ref": "#/$defs/GameMeta"
+    },
+    "frames": {
+      "items": {
+        "$ref": "#/$defs/GameFrame"
+      },
+      "title": "Frames",
+      "type": "array"
+    },
+    "proposals": {
+      "items": {
+        "$ref": "#/$defs/GameProposal"
+      },
+      "title": "Proposals",
+      "type": "array"
+    },
+    "stageHints": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GameStageHints"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "provider": {
+      "title": "Provider",
+      "type": "string"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model"
+    }
+  },
+  "required": [
+    "meta",
+    "frames",
+    "provider"
+  ],
+  "title": "GameTurnResponse",
+  "type": "object"
+}

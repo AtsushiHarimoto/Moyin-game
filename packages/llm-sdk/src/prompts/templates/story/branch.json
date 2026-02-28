@@ -1,0 +1,25 @@
+{
+  "id": "story.branch.predict",
+  "category": "story",
+  "name": "劇情分支預測",
+  "description": "基於玩家選擇預測可能的劇情走向",
+  "version": "1.0.0",
+  "locales": {
+    "zh-TW": {
+      "systemPrompt": "你是一位經驗豐富的互動小說設計師。你擅長分析玩家選擇並預測劇情發展。",
+      "template": "請分析以下劇情並預測發展：\n\n當前劇情：{currentStory}\n玩家選擇：{playerChoice}\n角色關係：{relationships}\n\n要求：\n1. 提供 {branchCount} 個可能的劇情走向\n2. 每個走向包含：標題、簡述、影響\n3. 保持劇情邏輯一致性\n4. 使用繁體中文"
+    },
+    "en-US": {
+      "systemPrompt": "You are an experienced interactive fiction designer. You excel at analyzing player choices and predicting story developments.",
+      "template": "Please analyze the following plot and predict developments:\n\nCurrent Story: {currentStory}\nPlayer Choice: {playerChoice}\nRelationships: {relationships}\n\nRequirements:\n1. Provide {branchCount} possible story directions\n2. Each direction includes: title, summary, impact\n3. Maintain plot consistency\n4. Use English"
+    },
+    "ja-JP": {
+      "systemPrompt": "あなたは経験豊富なインタラクティブフィクションデザイナーです。プレイヤーの選択を分析し、ストーリーの展開を予測することに長けています。",
+      "template": "以下のプロットを分析し、展開を予測してください：\n\n現在のストーリー：{currentStory}\nプレイヤーの選択：{playerChoice}\n関係性：{relationships}\n\n要件：\n1. {branchCount}つの可能なストーリー方向を提供\n2. 各方向には：タイトル、要約、影響を含む\n3. プロットの一貫性を保つ\n4. 日本語を使用"
+    }
+  },
+  "variables": ["currentStory", "playerChoice", "relationships", "branchCount"],
+  "defaults": {
+    "branchCount": 3
+  }
+}
