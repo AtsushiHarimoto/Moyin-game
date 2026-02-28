@@ -24,8 +24,8 @@
 - [Testing Strategy](#testing-strategy)
 - [Moyin Ecosystem](#moyin-ecosystem)
 - [License](#license)
-- [Japanese / Japanese](#japanese)
-- [Traditional Chinese / Traditional Chinese](#traditional-chinese)
+- [日本語 / Japanese](#japanese)
+- [繁體中文 / Traditional Chinese](#traditional-chinese)
 
 ---
 

@@ -24,7 +24,7 @@ export default function LoginPage() {
           {t('message.route_title_home')}
         </h1>
         <p style={{ color: 'var(--ui-muted)' }}>
-          {t('message.login_placeholder', 'Login functionality coming soon.')}
+          {t('message.login_placeholder', 'Authentication is not yet available. Please continue as a guest.')}
         </p>
       </div>
     </div>

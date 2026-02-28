@@ -1,6 +1,7 @@
 {
   "name": "moyin-game-v2",
   "private": true,
+  "license": "CC-BY-NC-4.0",
   "scripts": {
     "dev": "pnpm --filter @moyin/web dev",
     "build": "pnpm --filter @moyin/web build",
